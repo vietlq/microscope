@@ -5,11 +5,16 @@ Template.postSubmit.events({
 
         var post = {
             url: $(e.target).find('[name=url]').val(),
-            title: $(e.target).find('[name=title]').val(),
-            createdAt: new Date(),
+            title: $(e.target).find('[name=title]').val()
         };
 
-        post._id = Posts.insert(post);
-        Router.go('postPage', post);
+        Meteor.call('postInsert', post, function(error, result) {
+            // Display the error to the user and abort
+            if (error) {
+                return alert('Unable to create a new post: ' + error.reason);
+            }
+
+            Router.go('postPage', result);
+        });
     }
 });
