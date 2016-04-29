@@ -15,6 +15,12 @@
             <ul class="nav navbar-nav navbar-right">
                 {{> loginButtons}}
             </ul>
+
+            {{#if currentUser}}
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{{pathFor 'postSubmit'}}">Submit Post</a></li>
+            </ul>
+            {{/if}}
         </div>
     </nav>
 </template>
