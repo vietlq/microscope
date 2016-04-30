@@ -14,6 +14,11 @@ Template.postSubmit.events({
                 return alert('Unable to create a new post: ' + error.reason);
             }
 
+            // Note to the user if the link already exists
+            if (result.postExists) {
+                console.log('The URL ' + post.url + ' already added.');
+            }
+
             Router.go('postPage', result);
         });
     }
