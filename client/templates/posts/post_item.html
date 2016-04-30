@@ -2,8 +2,11 @@
     <div class="post">
         <div class="post-content">
             <h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>
-            <p><span>Added {{time_ago}}</span></p>
+            <p>
+                <span>Submitted {{time_ago}} by {{#if ownPost}}yourself{{else}}{{author}}{{/if}}</span>
+            </p>
         </div>
-        <a href="{{pathFor 'postPage'}}" class="discuss btn btn-default">Discuss</a>
+        <a href="{{pathFor 'postPage'}}" class="post-actions btn btn-default">Discuss</a>
+        {{#if ownPost}}<a href="{{pathFor 'postEdit'}}" class="post-actions btn btn-default">Edit</a>{{/if}}
     </div>
 </template>
