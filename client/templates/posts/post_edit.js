@@ -6,6 +6,7 @@ Template.postEdit.events({
         const currPostId = this._id;
 
         const post = {
+            _id: currPostId,
             url: $(e.target).find('[name=url]').val(),
             title: $(e.target).find('[name=title]').val(),
         };
@@ -14,11 +15,6 @@ Template.postEdit.events({
             // Display the error to the user and abort
             if (error) {
                 return alert('Unable to update the post: ' + error.reason);
-            }
-
-            // Note to the user if the link does not exist
-            if (result.postExists === false) {
-                console.log('The URL ' + post.url + ' does not exist.');
             }
 
             Router.go('postPage', {_id: currPostId});
