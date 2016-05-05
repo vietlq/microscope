@@ -1,16 +1,54 @@
+// Fixture data
 if (Posts.find().count() === 0) {
-    Posts.insert({
-        title: 'Introducing Telescope',
-        url: 'http://sachagreif.com/introducing-telescope/'
-    });
+  var now = new Date().getTime();
 
-    Posts.insert({
-        title: 'Meteor',
-        url: 'http://meteor.com'
-    });
+  // create two users
+  var vietId = Meteor.users.insert({
+    profile: { name: 'Viet Le' }
+  });
+  var viet = Meteor.users.findOne(vietId);
+  var mishaId = Meteor.users.insert({
+    profile: { name: 'Misha Dog' }
+  });
+  var misha = Meteor.users.findOne(mishaId);
 
-    Posts.insert({
-        title: 'The Meteor Book',
-        url: 'http://themeteorbook.com'
-    });
+  var telescopeId = Posts.insert({
+    title: 'Introducing Telescope',
+    userId: misha._id,
+    author: misha.profile.name,
+    url: 'http://sachagreif.com/introducing-telescope/',
+    submitted: new Date(now - 7 * 3600 * 1000)
+  });
+
+  Comments.insert({
+    postId: telescopeId,
+    userId: viet._id,
+    author: viet.profile.name,
+    submitted: new Date(now - 5 * 3600 * 1000),
+    body: 'Interesting project Sacha, can I get involved?'
+  });
+
+  Comments.insert({
+    postId: telescopeId,
+    userId: misha._id,
+    author: misha.profile.name,
+    submitted: new Date(now - 3 * 3600 * 1000),
+    body: 'You sure can Tom!'
+  });
+
+  Posts.insert({
+    title: 'Meteor',
+    userId: viet._id,
+    author: viet.profile.name,
+    url: 'http://meteor.com',
+    submitted: new Date(now - 10 * 3600 * 1000)
+  });
+
+  Posts.insert({
+    title: 'The Meteor Book',
+    userId: viet._id,
+    author: viet.profile.name,
+    url: 'http://themeteorbook.com',
+    submitted: new Date(now - 12 * 3600 * 1000)
+  });
 }

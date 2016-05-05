@@ -3,7 +3,8 @@
         <div class="post-content">
             <h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>
             <p>
-                <span>Submitted {{time_ago}} by {{#if ownPost}}yourself{{else}}{{author}}{{/if}}</span>
+                <span>Submitted {{time_ago}} by {{#if ownPost}}yourself{{else}}{{author}}{{/if}}</span>,
+                <a href="{{pathFor 'postPage'}}">{{commentsCount}} comments</a>
             </p>
         </div>
         <a href="{{pathFor 'postPage'}}" class="post-actions btn btn-default">Discuss</a>
