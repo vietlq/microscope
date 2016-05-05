@@ -3,7 +3,7 @@ Template.postSubmit.events({
         // Stop default form submission and page reload
         e.preventDefault();
 
-        var post = {
+        let post = {
             url: $(e.target).find('[name=url]').val(),
             title: $(e.target).find('[name=title]').val()
         };
