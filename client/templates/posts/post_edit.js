@@ -14,7 +14,7 @@ Template.postEdit.events({
         Meteor.call('postUpdate', post, function(error, result) {
             // Display the error to the user and abort
             if (error) {
-                return alert('Unable to update the post: ' + error.reason);
+                return throwError('Unable to update the post: ' + error.reason);
             }
 
             Router.go('postPage', {_id: currPostId});
