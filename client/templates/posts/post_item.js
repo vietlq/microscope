@@ -13,7 +13,4 @@ Template.postItem.helpers({
     time_ago() {
         return moment(this.submitted).fromNow();
     },
-    commentsCount() {
-        return Comments.find({postId: this._id}).count();
-    },
 });
