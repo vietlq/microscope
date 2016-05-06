@@ -169,7 +169,8 @@ body {
 .dropdown-menu li a span {
   font-size: 0.7em;
   color: #000;
-  width: 250px;
+  width: 300px;
   white-space: normal;;
   word-wrap: break-word;
+  text-align: justify;
 }
