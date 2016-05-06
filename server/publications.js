@@ -7,3 +7,7 @@ Meteor.publish('comments', function(postId) {
 
     return Comments.find({postId});
 });
+
+Meteor.publish('notifications', function() {
+    return Notifications.find();
+});

@@ -98,7 +98,8 @@ body {
   clear: both;
   line-height: 20px;
   color: #bbb;
-  white-space: nowrap; }
+  white-space: nowrap;
+}
 
 .load-more {
   display: block;
@@ -158,4 +159,17 @@ body {
   clear: both;
   margin-bottom: 5px;
   pointer-events: auto;
+}
+
+.dropdown-menu li a {
+    margin: 0 0 !important;
+    padding: 0 0 !important;
+}
+
+.dropdown-menu li a span {
+  font-size: 0.7em;
+  color: #000;
+  width: 250px;
+  white-space: normal;;
+  word-wrap: break-word;
 }
