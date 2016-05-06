@@ -9,5 +9,6 @@ Meteor.publish('comments', function(postId) {
 });
 
 Meteor.publish('notifications', function() {
-    return Notifications.find();
+    // For each user, load only his/her notifications that have not been seen
+    return Notifications.find({userId: this.userId, read: false});
 });
