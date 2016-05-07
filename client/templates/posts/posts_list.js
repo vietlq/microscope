@@ -26,6 +26,14 @@ Template.postsList.onRendered(function() {
             // Reset everything to 0, animated
             $node.addClass('animate').css('top', 0);
             $inBetween.addClass('animate').css('top', 0);
+        },
+        insertElement(node, next) {
+            $(node).hide().insertBefore(next).fadeIn();
+        },
+        removeElement(node) {
+            $(node).fadeOut(function() {
+                $(this).remove();
+            });
         }
     }
 });
