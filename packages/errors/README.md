@@ -1,0 +1,1 @@
+# Renders client-side errors
