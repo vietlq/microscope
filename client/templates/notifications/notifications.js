@@ -18,6 +18,9 @@ Template.notificationItem.helpers({
         }
         return '';
     },
+    notificationTime() {
+        return moment(this.createdAt).fromNow();
+    }
 });
 
 Template.notificationItem.events({
