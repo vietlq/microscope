@@ -27,3 +27,5 @@ check
 audit-argument-checks
 momentjs:moment
 rss
+http
+bitly
