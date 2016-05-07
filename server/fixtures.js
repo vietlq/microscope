@@ -1,4 +1,11 @@
 // Fixture data
+
+let randomDate = function() {
+    const start = new Date(2012, 1, 1);
+    const end = new Date();
+    return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+}
+
 if (Posts.find().count() === 0) {
   var now = new Date().getTime();
 
