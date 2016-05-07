@@ -174,3 +174,12 @@ body {
   word-wrap: break-word;
   text-align: justify;
 }
+
+.post{
+  position:relative;
+}
+
+/* Elements having 2 classes 'post' & 'animate' */
+.post.animate{
+  transition:all 300ms 0ms ease-in;
+}
