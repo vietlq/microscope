@@ -17,13 +17,13 @@
                 <li class="dropdown">
                     {{> notifications}}
                 </li>
-                <li>
+                <li class="{{activeRouteClass 'home' 'newPosts'}}">
                     <a href="{{pathFor 'newPosts'}}">New Posts</a>
                 </li>
-                <li>
+                <li class="{{activeRouteClass 'bestPosts'}}">
                     <a href="{{pathFor 'bestPosts'}}">Best Posts</a>
                 </li>
-                <li>
+                <li class="{{activeRouteClass 'postSubmit'}}">
                     <a href="{{pathFor 'postSubmit'}}">Submit Post</a>
                 </li>
             </ul>
