@@ -10,6 +10,9 @@ Template.postItem.helpers({
         a.href = this.url;
         return a.hostname;
     },
+    postUrl() {
+        return (this.shortURL ? this.shortURL : this.url);
+    },
     time_ago() {
         return moment(this.submitted).fromNow();
     },
