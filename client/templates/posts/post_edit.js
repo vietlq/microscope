@@ -45,7 +45,7 @@ Template.postEdit.events({
             const currPostId = this._id;
             Posts.remove(currPostId);
 
-            Router.go('postsList');
+            Router.go('home');
         }
     }
 });

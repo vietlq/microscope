@@ -31,9 +31,15 @@ Template.postSubmit.events({
 
 Template.postSubmit.helpers({
     errorMessage: function(field) {
-        return Session.get('postSubmitErrors')[field];
+        if (Session.get('postSubmitErrors')) {
+            return Session.get('postSubmitErrors')[field];
+        }
+        return null;
     },
     errorClass: function (field) {
-        return !!Session.get('postSubmitErrors')[field] ? 'has-error' : '';
+        if (Session.get('postSubmitErrors')) {
+            return (!!Session.get('postSubmitErrors')[field]) ? 'has-error' : '';
+        }
+        return '';
     }
 });
