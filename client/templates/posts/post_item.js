@@ -15,8 +15,8 @@ Template.postItem.helpers({
     },
     upvotedClass() {
         const userId = Meteor.userId();
-        // If the userId is not among upvoters, still can vote
-        if (userId && !_.include(this.upvoters, userId)) {
+        // If the userId is not the owner and is not among upvoters, still can vote
+        if (userId && (userId != this.userId) && !_.include(this.upvoters, userId)) {
             return 'btn-primary upvotable';
         } else {
             return 'disabled';
